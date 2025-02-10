@@ -12,4 +12,14 @@ class FirebaseAuthDataSource {
       throw Exception("Sign-Up Failed $e");
     }
   }
+
+  Future<User?> signIn(String email, String password) async {
+    try {
+      final UserCredential = await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
+      return UserCredential.user;
+    } catch (e) {
+      throw Exception("Sign-In Failed $e");
+    }
+  }
 }
