@@ -22,4 +22,8 @@ class FirebaseAuthDataSource {
       throw Exception("Sign-In Failed $e");
     }
   }
+
+  Future<void> logout() async {
+    await _auth.signOut();
+  }
 }
