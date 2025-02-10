@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "841307892233",
+    "project_id": "cellula-task",
+    "storage_bucket": "cellula-task.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841307892233:android:3202161521d83b5b7626d8",
+        "android_client_info": {
+          "package_name": "com.example.cellula_task1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAl2r9_LYbympVP1Z6Dvbm5CMz1bcxjKrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
