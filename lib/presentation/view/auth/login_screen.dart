@@ -99,7 +99,12 @@ class LoginScreen extends ConsumerWidget {
                             child: CustomButton(
                                 text: 'LOG IN',
                                 width: Dimensions.screenWidth(context) / 1.35,
-                                onPressed: () {}),
+                                onPressed: () {
+                                  authViewModel.login(
+                                    _emailController.text.trim(),
+                                    _passwordController.text.trim(),
+                                  );
+                                }),
                           )
                         ],
                       ),
