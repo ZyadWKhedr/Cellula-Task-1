@@ -1,4 +1,4 @@
-import 'package:cellula_task1/presentation/view/login_screen.dart';
+import 'package:cellula_task1/presentation/view/auth/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_core/firebase_core.dart';
