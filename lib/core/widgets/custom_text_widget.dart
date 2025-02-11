@@ -1,3 +1,4 @@
+import 'package:cellula_task1/core/const/dimensions.dart';
 import 'package:flutter/material.dart';
 
 class CustomText extends StatelessWidget {
@@ -25,7 +26,7 @@ class CustomText extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        fontSize: fontSize,
+        fontSize: fontSize ?? Dimensions.font16(context),
         fontWeight: fontWeight,
         color: color,
       ),
