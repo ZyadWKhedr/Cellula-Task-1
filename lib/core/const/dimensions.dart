@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Dimensions {
-  static double screenHeight(BuildContext context) => MediaQuery.of(context).size.height;
-  static double screenWidth(BuildContext context) => MediaQuery.of(context).size.width;
+  static double screenHeight(BuildContext context) =>
+      MediaQuery.of(context).size.height;
+  static double screenWidth(BuildContext context) =>
+      MediaQuery.of(context).size.width;
 
   // predefined dimensions based on screen height
   static double height10(BuildContext context) => screenHeight(context) / 80;
@@ -20,4 +22,6 @@ class Dimensions {
   static double font16(BuildContext context) => screenWidth(context) / 26;
   static double font18(BuildContext context) => screenWidth(context) / 22;
   static double font20(BuildContext context) => screenWidth(context) / 20;
+  static double font30(BuildContext context) => screenWidth(context) / 15;
+  static double font50(BuildContext context) => screenWidth(context) / 12;
 }
