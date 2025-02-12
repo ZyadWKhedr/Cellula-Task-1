@@ -119,6 +119,7 @@ class LoginScreen extends ConsumerWidget {
                                             content: Text(authState.message!),
                                             backgroundColor: Colors.green),
                                       );
+                                      context.go(AppRoutes.home);
                                     }
                                   });
                                   authViewModel.login(

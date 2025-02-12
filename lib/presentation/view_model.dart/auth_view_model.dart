@@ -36,7 +36,7 @@ class AuthViewModel extends StateNotifier<AuthState> {
     try {
       final user = await signUpUseCase(email, password);
       if (user != null) {
-        await user.updateDisplayName(fullName); // ✅ Set full name in Firebase
+        await user.updateDisplayName(fullName);
         state = AuthState.authenticated(user, message: "Sign-up successful");
       } else {
         state = AuthState.error("Sign-up failed");
@@ -68,7 +68,6 @@ class AuthViewModel extends StateNotifier<AuthState> {
       return false;
     }
 
-    // Full name validation (only for sign-up)
     if (fullName != null && fullName.isEmpty) {
       state = AuthState.error("Full name cannot be empty");
       return false;
