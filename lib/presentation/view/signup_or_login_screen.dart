@@ -29,8 +29,7 @@ class SignupOrLoginScreen extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              bottom: Dimensions.height50(context) *
-                  1.5, 
+              bottom: Dimensions.height50(context) * 1.5,
               left: Dimensions.width50(context) * 2,
             ),
             child: Column(
@@ -40,10 +39,10 @@ class SignupOrLoginScreen extends StatelessWidget {
                 CustomButton(
                   text: 'Sign up',
                   width: Dimensions.screenWidth(context) / 1.35,
-                  onPressed: () => context.go(AppRoutes.signin),
+                  onPressed: () => context.go(AppRoutes.signup),
                 ),
                 SizedBox(
-                  height: Dimensions.height20(context), 
+                  height: Dimensions.height20(context),
                 ),
                 CustomButton(
                   text: 'Log in',
