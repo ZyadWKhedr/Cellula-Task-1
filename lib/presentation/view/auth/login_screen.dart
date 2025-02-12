@@ -1,11 +1,13 @@
 import 'package:cellula_task1/core/const/app_colors.dart';
 import 'package:cellula_task1/core/const/dimensions.dart';
+import 'package:cellula_task1/core/routes/app_routes.dart';
 import 'package:cellula_task1/core/widgets/custom_text_widget.dart';
 import 'package:cellula_task1/presentation/view/auth/widgets/custom_button.dart';
 import 'package:cellula_task1/presentation/view/auth/widgets/custom_text_field.dart';
 import 'package:cellula_task1/presentation/view_model.dart/auth_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginScreen extends ConsumerWidget {
   final _emailController = TextEditingController();
@@ -104,6 +106,7 @@ class LoginScreen extends ConsumerWidget {
                                     _emailController.text.trim(),
                                     _passwordController.text.trim(),
                                   );
+                                  context.go(AppRoutes.home);
                                 }),
                           )
                         ],

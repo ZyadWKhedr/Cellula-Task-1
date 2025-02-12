@@ -102,10 +102,11 @@ class SignUpScreen extends ConsumerWidget {
                   text: 'Next',
                   width: Dimensions.screenWidth(context) / 1.35,
                   onPressed: () {
-                    authViewModel.login(
+                    authViewModel.signUp(
                       _emailController.text.trim(),
                       _passwordController.text.trim(),
                     );
+                    context.go(AppRoutes.home);
                   }),
               Padding(
                 padding: const EdgeInsets.all(8.0),
