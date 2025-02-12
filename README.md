@@ -21,3 +21,11 @@ A Flutter project implementing Firebase Authentication using **Riverpod** for st
 ```sh
 git clone https://github.com/your-username/cellula-task1.git
 cd cellula-task1
+
+## SignUp
+https://github.com/user-attachments/assets/9fc7f478-c2e6-4685-a25e-e29d9ff0beb8
+
+
+
+
+
