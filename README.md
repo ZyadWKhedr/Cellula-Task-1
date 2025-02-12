@@ -11,7 +11,11 @@ A Flutter project implementing Firebase Authentication using **Riverpod** for st
   - Email must be in a valid format (e.g., `user@example.com`)
   - Password must be at least 8 characters, contain 1 uppercase letter, 1 digit, and 1 special character
 - ⚡ **State Management** with Riverpod  
-- 🔥 **Firebase Authentication Integration**  
+- 🔥 **Firebase Authentication Integration**
+
+- ## SignUp
+https://github.com/user-attachments/assets/9fc7f478-c2e6-4685-a25e-e29d9ff0beb8
+
 
 ---
 
@@ -22,8 +26,6 @@ A Flutter project implementing Firebase Authentication using **Riverpod** for st
 git clone https://github.com/your-username/cellula-task1.git
 cd cellula-task1
 
-## SignUp
-https://github.com/user-attachments/assets/9fc7f478-c2e6-4685-a25e-e29d9ff0beb8
 
 
 
