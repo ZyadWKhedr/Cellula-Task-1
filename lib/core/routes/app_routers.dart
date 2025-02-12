@@ -1,7 +1,7 @@
 import 'package:cellula_task1/presentation/view/auth/login_screen.dart';
 import 'package:cellula_task1/presentation/view/auth/sign_up_screen.dart';
 import 'package:cellula_task1/presentation/view/home/home_screen.dart';
-import 'package:cellula_task1/presentation/view/signup_or_login_screen.dart';
+import 'package:cellula_task1/presentation/view/auth/signup_or_login_screen.dart';
 import 'package:go_router/go_router.dart';
 import 'app_routes.dart';
 
@@ -20,7 +20,7 @@ final GoRouter appRouter = GoRouter(
       builder: (context, state) => LoginScreen(),
     ),
     GoRoute(
-      path: AppRoutes.signin,
+      path: AppRoutes.signup,
       builder: (context, state) => SignUpScreen(),
     ),
   ],

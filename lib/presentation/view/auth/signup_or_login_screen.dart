@@ -29,29 +29,30 @@ class SignupOrLoginScreen extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              bottom: Dimensions.height50(context) * 1.5,
-              left: Dimensions.width50(context) * 2,
+              bottom: Dimensions.height50(context) * 1.9,
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                CustomButton(
-                  text: 'Sign up',
-                  width: Dimensions.screenWidth(context) / 1.35,
-                  onPressed: () => context.go(AppRoutes.signup),
-                ),
-                SizedBox(
-                  height: Dimensions.height20(context),
-                ),
-                CustomButton(
-                  text: 'Log in',
-                  width: Dimensions.screenWidth(context) / 1.35,
-                  color: Colors.white,
-                  textColor: AppColors.primaryColor,
-                  onPressed: () => context.go(AppRoutes.signin),
-                ),
-              ],
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  CustomButton(
+                    text: 'Sign up',
+                    width: Dimensions.screenWidth(context) / 1.35,
+                    onPressed: () => context.go(AppRoutes.signup),
+                  ),
+                  SizedBox(
+                    height: Dimensions.height20(context),
+                  ),
+                  CustomButton(
+                    text: 'Log in',
+                    width: Dimensions.screenWidth(context) / 1.35,
+                    color: Colors.white,
+                    textColor: AppColors.primaryColor,
+                    onPressed: () => context.go(AppRoutes.signin),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
