@@ -1,16 +1,23 @@
-# cellula_task1
+# 📱 Cellula Task 1 - Firebase Authentication with Riverpod
 
-A new Flutter project.
+A Flutter project implementing Firebase Authentication using **Riverpod** for state management and **Clean Architecture** for better code separation.
 
-## Getting Started
+## 🚀 Features
+- 🔐 **User Authentication**
+  - Sign in with email & password
+  - Sign up with email & password
+  - Logout functionality
+- ✅ **Input Validation**
+  - Email must be in a valid format (e.g., `user@example.com`)
+  - Password must be at least 8 characters, contain 1 uppercase letter, 1 digit, and 1 special character
+- ⚡ **State Management** with Riverpod  
+- 🔥 **Firebase Authentication Integration**  
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 🛠️ Installation & Setup
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 1️⃣ **Clone the Repository**
+```sh
+git clone https://github.com/your-username/cellula-task1.git
+cd cellula-task1
