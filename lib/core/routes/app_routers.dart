@@ -8,9 +8,7 @@ final GoRouter appRouter = GoRouter(
   routes: [
     GoRoute(
       path: AppRoutes.signupOrLogin,
-      builder: (context, state) {
-        return SignupOrLoginScreen();
-      },
+      builder: (context, state) => SignupOrLoginScreen(),
     ),
     GoRoute(
       path: AppRoutes.home,
@@ -18,9 +16,7 @@ final GoRouter appRouter = GoRouter(
     ),
     GoRoute(
       path: AppRoutes.signin,
-      builder: (context, state) {
-        return LoginScreen();
-      },
+      builder: (context, state) => LoginScreen(),
     ),
   ],
 );
