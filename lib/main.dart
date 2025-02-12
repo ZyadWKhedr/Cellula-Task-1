@@ -1,3 +1,4 @@
+import 'package:cellula_task1/core/routes/app_routers.dart';
 import 'package:cellula_task1/presentation/view/auth/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -21,12 +22,9 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(), // Set the initial screen to LoginScreen
-      routes: {
-        '/login': (context) => LoginScreen(),
-      },
+     routerConfig: appRouter,
     );
   }
 }
