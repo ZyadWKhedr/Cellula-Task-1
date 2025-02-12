@@ -102,11 +102,27 @@ class SignUpScreen extends ConsumerWidget {
                   text: 'Next',
                   width: Dimensions.screenWidth(context) / 1.35,
                   onPressed: () {
+                    WidgetsBinding.instance.addPostFrameCallback((_) {
+                      if (authState.error != null) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                              content: Text(authState.error!),
+                              backgroundColor: Colors.red),
+                        );
+                      }
+                      if (authState.message != null) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                              content: Text(authState.message!),
+                              backgroundColor: Colors.green),
+                        );
+                      }
+                    });
                     authViewModel.signUp(
                       _emailController.text.trim(),
                       _passwordController.text.trim(),
+                      _nameController.text.trim(),
                     );
-                    context.go(AppRoutes.home);
                   }),
               Padding(
                 padding: const EdgeInsets.all(8.0),

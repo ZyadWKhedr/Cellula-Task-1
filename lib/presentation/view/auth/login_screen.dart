@@ -102,11 +102,29 @@ class LoginScreen extends ConsumerWidget {
                                 text: 'LOG IN',
                                 width: Dimensions.screenWidth(context) / 1.35,
                                 onPressed: () {
+                                  WidgetsBinding.instance
+                                      .addPostFrameCallback((_) {
+                                    if (authState.error != null) {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                            content: Text(authState.error!),
+                                            backgroundColor: Colors.red),
+                                      );
+                                    }
+                                    if (authState.message != null) {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                            content: Text(authState.message!),
+                                            backgroundColor: Colors.green),
+                                      );
+                                    }
+                                  });
                                   authViewModel.login(
                                     _emailController.text.trim(),
                                     _passwordController.text.trim(),
                                   );
-                                  context.go(AppRoutes.home);
                                 }),
                           )
                         ],
