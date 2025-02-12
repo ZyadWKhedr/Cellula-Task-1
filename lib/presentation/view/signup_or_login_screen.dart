@@ -17,17 +17,22 @@ class SignupOrLoginScreen extends StatelessWidget {
         children: [
           ClipPath(
             clipper: MiddleCurveClipper(
-                curveHeight: Dimensions.height50(context) * 1.5),
+              curveHeight: Dimensions.height50(context) * 1.5,
+            ),
             child: Container(
               width: double.infinity,
               height: Dimensions.height50(context) * 8,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(bottom: 100, left: 50),
+            padding: EdgeInsets.only(
+              bottom: Dimensions.height50(context) *
+                  1.5, 
+              left: Dimensions.width50(context) * 2,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.end,
@@ -35,22 +40,18 @@ class SignupOrLoginScreen extends StatelessWidget {
                 CustomButton(
                   text: 'Sign up',
                   width: Dimensions.screenWidth(context) / 1.35,
-                  onPressed: () => context.go(
-                    AppRoutes.signin,
-                  ),
+                  onPressed: () => context.go(AppRoutes.signin),
                 ),
                 SizedBox(
-                  height: Dimensions.height20(context),
+                  height: Dimensions.height20(context), 
                 ),
                 CustomButton(
                   text: 'Log in',
                   width: Dimensions.screenWidth(context) / 1.35,
                   color: Colors.white,
                   textColor: AppColors.primaryColor,
-                  onPressed: () => context.go(
-                    AppRoutes.signin,
-                  ),
-                )
+                  onPressed: () => context.go(AppRoutes.signin),
+                ),
               ],
             ),
           ),
