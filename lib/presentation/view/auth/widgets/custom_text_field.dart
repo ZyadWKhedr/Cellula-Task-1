@@ -34,7 +34,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return Container(
       width: widget.width ??
           MediaQuery.of(context).size.width *
-              0.9, // Default to 90% of screen width
+              0.9,
       height: 55,
       decoration: BoxDecoration(
         color: widget.backgroundColor,
