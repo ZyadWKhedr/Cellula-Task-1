@@ -11,7 +11,7 @@ class CustomTextField extends StatefulWidget {
   final double? width; 
 
   const CustomTextField({
-    Key? key,
+    super.key,
     required this.controller,
     this.hintText = "",
     this.isPassword = false,
@@ -20,7 +20,7 @@ class CustomTextField extends StatefulWidget {
     this.hintTextColor = Colors.grey,
     this.iconColor = Colors.grey,
     this.width, 
-  }) : super(key: key);
+  });
 
   @override
   _CustomTextFieldState createState() => _CustomTextFieldState();
