@@ -11,6 +11,13 @@ The Weather App is a Flutter application built using Riverpod and the MVVM (Mode
 - **State Management**: Uses Riverpod for efficient and reactive state management.
 - **Clean Architecture**: Follows MVVM principles to ensure maintainability and scalability.
 
+
+https://github.com/user-attachments/assets/97af3553-dc06-498a-a902-445b6a70d8e1
+
+https://github.com/user-attachments/assets/853a3280-c432-4d40-9028-f86366c8becb
+
+
+
 ## Project Structure
 The app follows the Clean Architecture pattern, separating concerns into distinct layers:
 
