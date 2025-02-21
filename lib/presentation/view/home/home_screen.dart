@@ -33,38 +33,39 @@ class HomeScreen extends ConsumerWidget {
           ),
         ),
         padding: const EdgeInsets.all(20),
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CustomText(
-                text: 'Hello',
-                fontSize: Dimensions.font50(context),
-                color: AppColors.teritaryColor,
-              ),
-              Text(
-                username,
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white,
+        child: SingleChildScrollView(
+          // Wrap the entire column
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomText(
+                  text: 'Hello',
+                  fontSize: Dimensions.font50(context),
+                  color: AppColors.teritaryColor,
                 ),
-              ),
-              SizedBox(height: Dimensions.height20(context)),
+                Text(
+                  username,
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white,
+                  ),
+                ),
+                SizedBox(height: Dimensions.height20(context)),
 
-              SearchField(),
-              SizedBox(height: Dimensions.height50(context)),
+                SearchField(), // The keyboard appears when tapping here
+                SizedBox(height: Dimensions.height50(context)),
 
-              // Weather Data
-              weatherAsync.when(
-                data: (weather) {
-                  String day = DateFormat('EEEE').format(DateTime.now());
-                  String date = DateFormat('d MMM yyyy').format(DateTime.now());
-                  String time = DateFormat('h:mm a').format(DateTime.now());
+                weatherAsync.when(
+                  data: (weather) {
+                    String day = DateFormat('EEEE').format(DateTime.now());
+                    String date =
+                        DateFormat('d MMM yyyy').format(DateTime.now());
+                    String time = DateFormat('h:mm a').format(DateTime.now());
 
-                  return SingleChildScrollView(
-                    child: Column(
+                    return Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
@@ -75,9 +76,7 @@ class HomeScreen extends ConsumerWidget {
                             color: Colors.white,
                           ),
                         ),
-                        SizedBox(
-                          height: Dimensions.height10(context),
-                        ),
+                        SizedBox(height: Dimensions.height10(context)),
                         CustomText(
                           text: "$date • $time",
                           color: Colors.white54,
@@ -139,20 +138,20 @@ class HomeScreen extends ConsumerWidget {
                           ],
                         ),
                       ],
+                    );
+                  },
+                  loading: () => const Center(
+                    child: CircularProgressIndicator(color: Colors.white),
+                  ),
+                  error: (error, _) => Center(
+                    child: Text(
+                      "Error: $error",
+                      style: const TextStyle(color: Colors.white),
                     ),
-                  );
-                },
-                loading: () => const Center(
-                  child: CircularProgressIndicator(color: Colors.white),
-                ),
-                error: (error, _) => Center(
-                  child: Text(
-                    "Error: $error",
-                    style: const TextStyle(color: Colors.white),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
