@@ -38,6 +38,8 @@ lib/
 3. Install dependencies:
    ```sh
    flutter pub get
+
+
    ```
 4. Run the app:
    ```sh
@@ -52,6 +54,10 @@ lib/
 
 ## API Integration
 The app fetches weather data from an external weather API. Ensure you set up an API key in your environment configuration before running the app.
+
+
+https://github.com/user-attachments/assets/23038d40-a6cd-48e1-be16-14c30d835ea9
+
 
 ## Contributing
 Pull requests are welcome! Please follow the coding standards and guidelines.
