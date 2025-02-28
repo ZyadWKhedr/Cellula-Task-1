@@ -5,7 +5,7 @@ import numpy as np
 app = Flask(__name__)
 
 # Load the model
-file_path = "random_forest_model.pkl"  # Make sure the file is in the same directory
+file_path = "random_forest_model (1).pkl"  # Make sure the file is in the same directory
 with open(file_path, 'rb') as file:
     model = pickle.load(file)
 
