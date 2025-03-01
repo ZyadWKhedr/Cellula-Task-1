@@ -13,7 +13,6 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final weatherAsync = ref.watch(weatherProvider);
-    final cityController = TextEditingController();
     final city = ref.watch(cityProvider);
     final user = FirebaseAuth.instance.currentUser;
     final username = user?.displayName ?? "User";
@@ -34,7 +33,6 @@ class HomeScreen extends ConsumerWidget {
         ),
         padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
-          // Wrap the entire column
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Column(
@@ -54,16 +52,18 @@ class HomeScreen extends ConsumerWidget {
                   ),
                 ),
                 SizedBox(height: Dimensions.height20(context)),
-
-                SearchField(), // The keyboard appears when tapping here
+                SearchField(),
                 SizedBox(height: Dimensions.height50(context)),
-
                 weatherAsync.when(
                   data: (weather) {
                     String day = DateFormat('EEEE').format(DateTime.now());
                     String date =
                         DateFormat('d MMM yyyy').format(DateTime.now());
                     String time = DateFormat('h:mm a').format(DateTime.now());
+
+                    // Determine Prediction
+                    String prediction =
+                        weather.prediction == 1 ? "✅ Go Out" : "❌ Don't Go Out";
 
                     return Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -89,7 +89,6 @@ class HomeScreen extends ConsumerWidget {
 
                         const SizedBox(height: 20),
 
-                        // Temperature
                         CustomText(
                           text: "${weather.temperature}°C",
                           fontSize: 50,
@@ -99,7 +98,6 @@ class HomeScreen extends ConsumerWidget {
 
                         SizedBox(height: Dimensions.height10(context)),
 
-                        // Humidity & Wind Speed
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -136,6 +134,24 @@ class HomeScreen extends ConsumerWidget {
                               ],
                             ),
                           ],
+                        ),
+
+                        SizedBox(height: Dimensions.height20(context)),
+
+                        // Display Prediction
+                        CustomText(
+                          text: "Prediction:",
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                        CustomText(
+                          text: prediction,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: weather.prediction == 1
+                              ? Colors.green
+                              : Colors.red,
                         ),
                       ],
                     );

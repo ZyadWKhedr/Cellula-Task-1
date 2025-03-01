@@ -5,20 +5,22 @@ import numpy as np
 app = Flask(__name__)
 
 # Load the model
-file_path = "random_forest_model (1).pkl"  # Make sure the file is in the same directory
+file_path = "random_forest_model (1).pkl"  # Path to the model file
 with open(file_path, 'rb') as file:
     model = pickle.load(file)
 
-# Define a route for testing
+
+# Define a route for the home page
 @app.route('/')
 def home():
     return "Welcome to the ML Prediction API!"
+
 
 # Define the prediction route
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.json  # Get the JSON data from the request
-    features = data['features']  # Extract the feature list
+    features = data['features']  # Extract the features
 
     # Convert to 2D array (since the model expects 2D input)
     features = np.array(features).reshape(1, -1)
@@ -28,6 +30,7 @@ def predict():
 
     # Return the prediction as JSON
     return jsonify({'prediction': prediction.tolist()})
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001)
